@@ -17,7 +17,7 @@ The proposed window-based attention is very flexible which could work as a plug-
 Moreover, we propose a novel Symmetrical TransFormer (STF) framework with absolute transformer blocks in the down-sampling encoder and up-sampling decoder, which may be the first exploration of designing the up-sampling transformer, especially for the image compression task.
 Extensive experimental evaluations have shown that the proposed method is effective and outperforms the state-of-the-art methods.
 
-![guess](assets/cnn_arch.pdf)
+![guess](https://github.com/Googolxx/STF/blob/main/assets/cnn_arch.pdf)
 
 ## Installation
 
