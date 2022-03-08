@@ -17,8 +17,8 @@ The proposed window-based attention is very flexible which could work as a plug-
 Moreover, we propose a novel Symmetrical TransFormer (STF) framework with absolute transformer blocks in the down-sampling encoder and up-sampling decoder, which may be the first exploration of designing the up-sampling transformer, especially for the image compression task.
 Extensive experimental evaluations have shown that the proposed method is effective and outperforms the state-of-the-art methods.
 
-![guess](https://github.com/Googolxx/STF/blob/main/assets/cnn.png)
-
+![cnn_arch](https://github.com/Googolxx/STF/blob/main/assets/cnn_arch.png)
+![stf_arch](https://github.com/Googolxx/STF/blob/main/assets/stf_arch.png)
 ## Installation
 
 Install [CompressAI](https://github.com/InterDigitalInc/CompressAI) and the packages required for development.
@@ -60,12 +60,21 @@ CUDA_VISIBLE_DEVICES=0 python -m compressai.utils.eval_model -d kodak -r kodak_r
 CUDA_VISIBLE_DEVICES=0 python -m compressai.utils.eval_model -d kodak -r kodak_reconstruction -a cnn -p /path/to/checkpoint/ --cuda
 ```
 
-### Results
+## Results
 
-To be continued...
+### Visualization
 
-![RD curves](results/full_rd.jpg)
+![visualization01](https://github.com/Googolxx/STF/blob/main/assets/details_01.png)
 
+![visualization07](https://github.com/Googolxx/STF/blob/main/assets/details_07.png)
+
+### RD curves
+
+![kodak_rd](https://github.com/Googolxx/STF/blob/main/assets/kodak_rd.png)
+>  RD curves on [Kodak](http://r0k.us/graphics/kodak/).
+
+![clic_rd](https://github.com/Googolxx/STF/blob/main/assets/clic_rd.png)
+>  RD curves on [CLIC Professional Validation dataset](https://www.compression.cc/).
 ## Related links
  * Tensorflow compression library by Ballé et al.: https://github.com/tensorflow/compression
  * Range Asymmetric Numeral System code from Fabian 'ryg' Giesen: https://github.com/rygorous/ryg_rans
