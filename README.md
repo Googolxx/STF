@@ -1,9 +1,27 @@
 # The Devil Is in the Details: Window-based Attention for Image Compression
+Pytorch implementation of the paper "The Devil Is in the Details: Window-based Attention for Image Compression" by Zou et.al..
 
+This repository currently provides the code for training and evaluating the CNN-based models and Transformer-based models.
+
+The code is based on [CompressAI](https://github.com/InterDigitalInc/CompressAI). For the official code release, see the [CompressAI](https://github.com/InterDigitalInc/CompressAI).
+
+
+## Abstract
+Learned image compression methods have exhibited superior rate-distortion performance than classical image compression standards.
+Most existing learned image compression models are based on Convolutional Neural Networks (CNNs).
+Despite great contributions, a main drawback of CNN based model is that its structure is not designed for capturing local details, especially the nonrepetitive textures, which severely affects the reconstruction quality.
+Therefore, how to make full use of both global structure and local texture becomes the core problem for learning-based image compression.
+Inspired by recent progresses of Vision Transformer (ViT) and Swin Transformer, we found that combining the local-aware attention mechanism with the global-related feature learning could meet the expectation in image compression.
+In this paper, we first extensively study the effects of multiple kinds of attention mechanisms for local features learning, then introduce a more straightforward yet effective window-based local attention block.
+The proposed window-based attention is very flexible which could work as a plug-and-play component to enhance CNN and Transformer models.
+Moreover, we propose a novel Symmetrical TransFormer (STF) framework with absolute transformer blocks in the down-sampling encoder and up-sampling decoder, which may be the first exploration of designing the up-sampling transformer, especially for the image compression task.
+Extensive experimental evaluations have shown that the proposed method is effective and outperforms the state-of-the-art methods.
+
+![guess](assets/cnn_arch.pdf)
 
 ## Installation
 
-Install CompressAI https://github.com/InterDigitalInc/CompressAI and the packages required for development.
+Install [CompressAI](https://github.com/InterDigitalInc/CompressAI) and the packages required for development.
 ```bash
 conda create -n compress python=3.7
 conda activate compress
@@ -17,34 +35,29 @@ pip install -e '.[dev]'
 
 ## Usage
 
-### Examples
-
-Script and notebook examples can be found in the `examples/` directory.
-
-
-#### Training a model
+### Training
 An examplary training script with a rate-distortion loss is provided in
-`examples/train.py`. 
+`train.py`. 
 
-Training a CNN model:
+Training a CNN-based model:
 ```bash
-CUDA_VISIBLE_DEVICES=0,1 python examples/train.py -d /data2/renjie_zou/openimages_30 -e 1000 --batch-size 16 --save --save_path ckpt/test.pth.tar -m ccwo --cuda --lambda 0.013
+CUDA_VISIBLE_DEVICES=0,1 python train.py -d /path/to/image/dataset/ -e 1000 --batch-size 16 --save --save_path /path/to/save/ -m cnn --cuda --lambda 0.0035
 ```
-Training a Transformer model:
+Training a Transformer-based model(STF):
 ```bash
-CUDA_VISIBLE_DEVICES=0,1 python examples/train.py -d /data2/renjie_zou/openimages_30 -e 1000 --batch-size 16 --save --save_path ckpt/test.pth.tar -m stf --cuda --lambda 0.013
+CUDA_VISIBLE_DEVICES=0,1 python train.py -d /path/to/image/dataset/ -e 1000 --batch-size 16 --save --save_path /path/to/save/ -m stf --cuda --lambda 0.0035
 ```
 
 
-#### Evaluation
+### Evaluation
 
 To evaluate a trained model on your own dataset, the evaluation script is:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python -m compressai.utils.eval_model checkpoint  kodak kodak_r -a stf -p /home/renjie_zou/compressai/ckpt/cc_w_o_013_best.pth.tar --cuda
+CUDA_VISIBLE_DEVICES=0 python -m compressai.utils.eval_model -d kodak -r kodak_reconstruction -a stf -p /path/to/checkpoint/ --cuda
 ```
 ```bash
-CUDA_VISIBLE_DEVICES=0 python -m compressai.utils.eval_model -d kodak -r kodak_r -a cnn -p /home/renjie_zou/compressai/ckpt/cc_w_o_013_best.pth.tar --cuda
+CUDA_VISIBLE_DEVICES=0 python -m compressai.utils.eval_model -d kodak -r kodak_reconstruction -a cnn -p /path/to/checkpoint/ --cuda
 ```
 
 ### Results
