@@ -24,6 +24,9 @@ Extensive experimental evaluations have shown that the proposed method is effect
 ![stf_arch](https://github.com/Googolxx/STF/blob/main/assets/stf_arch.png)
 >  The architecture of Transformer-based model (STF).
 
+
+## Installation
+
 Install [CompressAI](https://github.com/InterDigitalInc/CompressAI) and the packages required for development.
 ```bash
 conda create -n compress python=3.7
@@ -89,11 +92,11 @@ CUDA_VISIBLE_DEVICES=0 python -m compressai.utils.eval_model -d kodak -r kodak_r
 
 
 ## Related links
+ * CompressAI: https://github.com/InterDigitalInc/CompressAI
  * Tensorflow compression library by Ballé et al.: https://github.com/tensorflow/compression
  * Range Asymmetric Numeral System code from Fabian 'ryg' Giesen: https://github.com/rygorous/ryg_rans
- * Z. Cheng et al. 2020: https://github.com/ZhengxueCheng/Learned-Image-Compression-with-GMM-and-Attention
  * Kodak Images Dataset: http://r0k.us/graphics/kodak/
  * Open Images Dataset: https://github.com/openimages
  * CLIC: https://www.compression.cc/
- * CompressAI: https://github.com/InterDigitalInc/CompressAI
+
 
