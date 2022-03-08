@@ -32,7 +32,8 @@ Install [CompressAI](https://github.com/InterDigitalInc/CompressAI) and the pack
 conda create -n compress python=3.7
 conda activate compress
 pip install compressai
-cd /home/renjie_zou/release/ImageCompression
+git clone https://github.com/Googolxx/STF stf
+cd stf
 pip install -e .
 pip install -e '.[dev]'
 ```
