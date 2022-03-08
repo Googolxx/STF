@@ -17,9 +17,12 @@ The proposed window-based attention is very flexible which could work as a plug-
 Moreover, we propose a novel Symmetrical TransFormer (STF) framework with absolute transformer blocks in the down-sampling encoder and up-sampling decoder, which may be the first exploration of designing the up-sampling transformer, especially for the image compression task.
 Extensive experimental evaluations have shown that the proposed method is effective and outperforms the state-of-the-art methods.
 
+
 ![cnn_arch](https://github.com/Googolxx/STF/blob/main/assets/cnn_arch.png)
+>  The architecture of CNN-based model.
+
 ![stf_arch](https://github.com/Googolxx/STF/blob/main/assets/stf_arch.png)
-## Installation
+>  The architecture of Transformer-based model (STF).
 
 Install [CompressAI](https://github.com/InterDigitalInc/CompressAI) and the packages required for development.
 ```bash
@@ -64,10 +67,12 @@ CUDA_VISIBLE_DEVICES=0 python -m compressai.utils.eval_model -d kodak -r kodak_r
 
 ### Visualization
 
-![visualization01](https://github.com/Googolxx/STF/blob/main/assets/details_01.png)
+![visualization01](https://github.com/Googolxx/STF/blob/main/assets/detail_01.png)
+>  Visualization of the reconstructed image kodim01.png.
 
-![visualization07](https://github.com/Googolxx/STF/blob/main/assets/details_07.png)
-
+![visualization07](https://github.com/Googolxx/STF/blob/main/assets/detail_07.png)
+>  Visualization of the reconstructed image kodim07.png.
+>
 ### RD curves
 
 ![kodak_rd](https://github.com/Googolxx/STF/blob/main/assets/kodak_rd.png)
@@ -75,14 +80,20 @@ CUDA_VISIBLE_DEVICES=0 python -m compressai.utils.eval_model -d kodak -r kodak_r
 
 ![clic_rd](https://github.com/Googolxx/STF/blob/main/assets/clic_rd.png)
 >  RD curves on [CLIC Professional Validation dataset](https://www.compression.cc/).
+
+### Codec Efficiency on [Kodak](http://r0k.us/graphics/kodak/)
+| Method | Enc(s) | Dec(s) | PSNR | bpp |
+| ------------ | ------ | ------ | ------ | ------ |
+| CNN | 0.12 | 0.12 | 35.91 | 0.650 |
+| STF | 0.15 | 0.15 | 35.82 | 0.651 |
+
+
 ## Related links
  * Tensorflow compression library by Ballé et al.: https://github.com/tensorflow/compression
  * Range Asymmetric Numeral System code from Fabian 'ryg' Giesen: https://github.com/rygorous/ryg_rans
- * BPG image format by Fabrice Bellard: https://bellard.org/bpg
- * HEVC HM reference software: https://hevc.hhi.fraunhofer.de
- * VVC VTM reference software: https://vcgit.hhi.fraunhofer.de/jvet/VVCSoftware_VTM
- * AOM AV1 reference software: https://aomedia.googlesource.com/aom
  * Z. Cheng et al. 2020: https://github.com/ZhengxueCheng/Learned-Image-Compression-with-GMM-and-Attention
- * Kodak image dataset: http://r0k.us/graphics/kodak/
+ * Kodak Images Dataset: http://r0k.us/graphics/kodak/
+ * Open Images Dataset: https://github.com/openimages
+ * CLIC: https://www.compression.cc/
  * CompressAI: https://github.com/InterDigitalInc/CompressAI
 
