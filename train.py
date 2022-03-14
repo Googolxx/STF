@@ -37,7 +37,7 @@ class RateDistortionLoss(nn.Module):
         self.mse = nn.MSELoss()
         self.lmbda = lmbda
 
-    def forward(self, output, target):                          # output:{"x_hat": x_hat, "likelihoods": {"y": y_likelihoods,}   target:原图x
+    def forward(self, output, target):
         N, _, H, W = target.size()
         out = {}
         num_pixels = N * H * W
@@ -126,7 +126,7 @@ def train_one_epoch(
 
         out_net = model(d)
 
-        out_criterion = criterion(out_net, d)           # out_net:{"x_hat": x_hat, "likelihoods": {"y": y_likelihoods,}    d:原图x
+        out_criterion = criterion(out_net, d)
         out_criterion["loss"].backward()
         if clip_max_norm > 0:
             torch.nn.utils.clip_grad_norm_(model.parameters(), clip_max_norm)
@@ -175,8 +175,6 @@ def test_epoch(epoch, test_dataloader, model, criterion):
         f"\tBpp loss: {bpp_loss.avg:.2f} |"
         f"\tAux loss: {aux_loss.avg:.2f}\n"
     )
-
-
     return loss.avg
 
 
@@ -184,31 +182,6 @@ def save_checkpoint(state, is_best, filename):
     torch.save(state, filename)
     if is_best:
         shutil.copyfile(filename, filename[:-8]+"_best"+filename[-8:])
-
-
-import torchvision
-
-# def recon(model):
-#     _transforms = transforms.Compose(
-#         [transforms.CenterCrop((256, 256)), transforms.ToTensor()]
-#     )
-#
-#     val_dataset = ImageFolder('openimages', split="validation", transform=_transforms)
-#     device = next(model.parameters()).device
-#     val_dataloader = DataLoader(
-#         val_dataset,
-#         batch_size=1,
-#         num_workers=5,
-#         shuffle=False,
-#         pin_memory=True
-#     )
-#
-#     for i, data in enumerate(val_dataloader):
-#         data = data.to(device)
-#         out = model(data)
-#         reconstruction = out['x_hat']
-#         reconstruction = reconstruction.squeeze()
-#         torchvision.utils.save_image(reconstruction, 'openimages/recon/830_connected00_{}.png'.format(i), normalize=True)
 
 
 def parse_args(argv):
@@ -330,7 +303,6 @@ def main(argv):
         pin_memory=(device == "cuda"),
     )
 
-    # net = models[args.model](quality=6)
     net = models[args.model]()
     net = net.to(device)
 
@@ -366,8 +338,6 @@ def main(argv):
         )
         loss = test_epoch(epoch, test_dataloader, net, criterion)
         lr_scheduler.step(loss)
-
-
 
         is_best = loss < best_loss
         best_loss = min(loss, best_loss)
