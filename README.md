@@ -55,6 +55,10 @@ CUDA_VISIBLE_DEVICES=0 python -m compressai.utils.eval_model -d /path/to/image/f
 CUDA_VISIBLE_DEVICES=0 python -m compressai.utils.eval_model -d /path/to/image/folder/ -r /path/to/reconstruction/folder/ -a cnn -p /path/to/checkpoint/ --cuda
 ```
 
+
+### Dataset
+The script for downloading [OpenImages](https://github.com/openimages) is provided in `downloader_openimages.py`. Please install [fiftyone](https://github.com/voxel51/fiftyone) first.
+
 ## Results
 
 ### Visualization
