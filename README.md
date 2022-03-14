@@ -91,6 +91,7 @@ The script for downloading [OpenImages](https://github.com/openimages) is provid
  * Range Asymmetric Numeral System code from Fabian 'ryg' Giesen: https://github.com/rygorous/ryg_rans
  * Kodak Images Dataset: http://r0k.us/graphics/kodak/
  * Open Images Dataset: https://github.com/openimages
+ * fiftyone: https://github.com/voxel51/fiftyone
  * CLIC: https://www.compression.cc/
 
 
