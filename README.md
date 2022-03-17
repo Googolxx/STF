@@ -20,6 +20,7 @@ Install [CompressAI](https://github.com/InterDigitalInc/CompressAI) and the pack
 conda create -n compress python=3.7
 conda activate compress
 pip install compressai
+pip install pybind11
 git clone https://github.com/Googolxx/STF stf
 cd stf
 pip install -e .
@@ -37,6 +38,7 @@ An examplary training script with a rate-distortion loss is provided in
 Training a CNN-based model:
 ```bash
 CUDA_VISIBLE_DEVICES=0,1 python train.py -d /path/to/image/dataset/ -e 1000 --batch-size 16 --save --save_path /path/to/save/ -m cnn --cuda --lambda 0.0035
+e.g., CUDA_VISIBLE_DEVICES=0,1 python train.py -d openimages -e 1000 --batch-size 16 --save --save_path ckpt/cnn_0035.pth.tar -m cnn --cuda --lambda 0.0035
 ```
 Training a Transformer-based model(STF):
 ```bash
@@ -83,6 +85,15 @@ The script for downloading [OpenImages](https://github.com/openimages) is provid
 | CNN | 0.12 | 0.12 | 35.91 | 0.650 |
 | STF | 0.15 | 0.15 | 35.82 | 0.651 |
 
+## Citation
+```
+@inproceedings{zou2022the,
+  title={The Devil Is in the Details: Window-based Attention for Image Compression},
+  author={Zou, Renjie and Song, Chunfeng and Zhang, Zhaoxiang},
+  booktitle={CVPR},
+  year={2022}
+}
+```
 
 ## Related links
  * CompressAI: https://github.com/InterDigitalInc/CompressAI
