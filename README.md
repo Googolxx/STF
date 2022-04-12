@@ -86,12 +86,13 @@ The script for downloading [OpenImages](https://github.com/openimages) is provid
 | STF | 0.15 | 0.15 | 35.82 | 0.651 |
 
 ### Pretrained Models
-Pretrained models (optimized for MSE) using  randomly chose 300k images from the OpenImages dataset.
+Pretrained models (optimized for MSE) trained from scratch using randomly chose 300k images from the OpenImages dataset.
 
 | Method | Lambda | Link |
 | ---- | ------ | ------ |
 | CNN | 0.0035 | [cnn_0035](https://drive.google.com/file/d/1VUV6_Ws-3X6VZDKkfOVPQel8nr7ecut9/view?usp=sharing) |
 | STF | 0.0035 | [stf_0035](https://drive.google.com/file/d/1OFzZoEaofNgsimBuOPHtgOJiGsR_RS-M/view?usp=sharing) |
+| STF | 0.025 | [stf_025](https://drive.google.com/file/d/1rsYgEYuqSYBIA4rfvAjXtVSrjXOzkJlB/view?usp=sharing) |
 
 Other pretrained models will be released successively.
 ## Citation
