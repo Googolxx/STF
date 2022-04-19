@@ -91,6 +91,7 @@ Pretrained models (optimized for MSE) trained from scratch using randomly chose 
 | Method | Lambda | Link |
 | ---- | ------ | ------ |
 | CNN | 0.0035 | [cnn_0035](https://drive.google.com/file/d/1VUV6_Ws-3X6VZDKkfOVPQel8nr7ecut9/view?usp=sharing) |
+| CNN | 0.025 | [cnn_025](https://drive.google.com/file/d/1LrAWPlBE6WJUfjiDPGFO8ANSaP5BFEQI/view?usp=sharing) |
 | STF | 0.0035 | [stf_0035](https://drive.google.com/file/d/1OFzZoEaofNgsimBuOPHtgOJiGsR_RS-M/view?usp=sharing) |
 | STF | 0.025 | [stf_025](https://drive.google.com/file/d/1rsYgEYuqSYBIA4rfvAjXtVSrjXOzkJlB/view?usp=sharing) |
 
