@@ -88,12 +88,16 @@ The script for downloading [OpenImages](https://github.com/openimages) is provid
 ### Pretrained Models
 Pretrained models (optimized for MSE) trained from scratch using randomly chose 300k images from the OpenImages dataset.
 
-| Method | Lambda | Link |
-| ---- | ------ | ------ |
-| CNN | 0.0035 | [cnn_0035](https://drive.google.com/file/d/1VUV6_Ws-3X6VZDKkfOVPQel8nr7ecut9/view?usp=sharing) |
-| CNN | 0.025 | [cnn_025](https://drive.google.com/file/d/1LrAWPlBE6WJUfjiDPGFO8ANSaP5BFEQI/view?usp=sharing) |
-| STF | 0.0035 | [stf_0035](https://drive.google.com/file/d/1OFzZoEaofNgsimBuOPHtgOJiGsR_RS-M/view?usp=sharing) |
-| STF | 0.025 | [stf_025](https://drive.google.com/file/d/1rsYgEYuqSYBIA4rfvAjXtVSrjXOzkJlB/view?usp=sharing) |
+| Method | Lambda | Link                                                                                              |
+| ---- |--------|---------------------------------------------------------------------------------------------------|
+| CNN | 0.0035 | [cnn_0035](https://drive.google.com/file/d/1VUV6_Ws-3X6VZDKkfOVPQel8nr7ecut9/view?usp=sharing)    |
+| CNN | 0.025  | [cnn_025](https://drive.google.com/file/d/1LrAWPlBE6WJUfjiDPGFO8ANSaP5BFEQI/view?usp=sharing)     |
+| STF | 0.0018 | [stf_0018](https://drive.google.com/file/d/1ul3RPXxPbvE_2UkdyZZ0r7tM2Kevg-3F/view?usp=share_link) |
+| STF | 0.0035 | [stf_0035](https://drive.google.com/file/d/1OFzZoEaofNgsimBuOPHtgOJiGsR_RS-M/view?usp=sharing)    |
+| STF | 0.0067 | [stf_0067](https://drive.google.com/file/d/1SjhqcKyP3SqVm4yhJQslJ6HgY1E8FcBL/view?usp=share_link) |
+| STF | 0.013  | [stf_013](https://drive.google.com/file/d/1mupv4vcs8wpNdXCPclXghliikJyYjgj-/view?usp=share_link)  |
+| STF | 0.025  | [stf_025](https://drive.google.com/file/d/1rsYgEYuqSYBIA4rfvAjXtVSrjXOzkJlB/view?usp=sharing)     |
+| STF | 0.0483 | [stf_0483](https://drive.google.com/file/d/1cH5cR-0VdsQqCchyN3DO62Sx0WGjv1h8/view?usp=share_link)    |
 
 Other pretrained models will be released successively.
 ## Citation
