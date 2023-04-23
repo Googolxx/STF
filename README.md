@@ -91,10 +91,10 @@ Pretrained models (optimized for MSE) trained from scratch using randomly chose 
 | Method | Lambda | Link                                                                                              |
 | ---- |--------|---------------------------------------------------------------------------------------------------|
 | CNN | 0.0018 | [cnn_0018](https://drive.google.com/file/d/1RPdtyxTtfosuDe1-xtl5JzvnCU2vYnHD/view?usp=sharing)    |
-| CNN | 0.0035 | [cnn_0035](https://drive.google.com/file/d/1VUV6_Ws-3X6VZDKkfOVPQel8nr7ecut9/view?usp=sharing)    |
+| CNN | 0.0035 | [cnn_0035](https://drive.google.com/file/d/1L7xvei3Wj4BeSQ3lDBL-pyjEy13RKsjn/view?usp=sharing)    |
 | CNN | 0.0067 | [cnn_0067](https://drive.google.com/file/d/1DDCFFWBUa5cYOgJ9D9HPcwoOigzoJK31/view?usp=sharing)    |
 | CNN | 0.025  | [cnn_025](https://drive.google.com/file/d/1LrAWPlBE6WJUfjiDPGFO8ANSaP5BFEQI/view?usp=sharing)     |
-| STF | 0.0018 | [stf_0018](https://drive.google.com/file/d/1ul3RPXxPbvE_2UkdyZZ0r7tM2Kevg-3F/view?usp=share_link) |
+| STF | 0.0018 | [stf_0018](https://drive.google.com/file/d/15ujpSjif628iwVEay3mAWN-Vyqls3r23/view?usp=sharing) |
 | STF | 0.0035 | [stf_0035](https://drive.google.com/file/d/1OFzZoEaofNgsimBuOPHtgOJiGsR_RS-M/view?usp=sharing)    |
 | STF | 0.0067 | [stf_0067](https://drive.google.com/file/d/1SjhqcKyP3SqVm4yhJQslJ6HgY1E8FcBL/view?usp=share_link) |
 | STF | 0.013  | [stf_013](https://drive.google.com/file/d/1mupv4vcs8wpNdXCPclXghliikJyYjgj-/view?usp=share_link)  |
