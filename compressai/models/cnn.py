@@ -316,7 +316,7 @@ class WACNN(CompressionModel):
             index = self.gaussian_conditional.build_indexes(scale)
 
             rv = decoder.decode_stream(index.reshape(-1).tolist(), cdf, cdf_lengths, offsets)
-            rv = torch.Tensor(rv).reshape(1, -1, y_shape[0], y_shape[1])
+            rv = torch.Tensor(rv).reshape(mu.shape)
             y_hat_slice = self.gaussian_conditional.dequantize(rv, mu)
 
             lrp_support = torch.cat([mean_support, y_hat_slice], dim=1)
